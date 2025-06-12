@@ -4,7 +4,7 @@ metadata:
   name: demo-containers-app
   namespace: argocd
   annotations: 
-    octopus.com/project: "jt-s-argo-stuff"
+    octopus.com/project: "container-replacement-demo"
     octopus.com/environment: "demo"
 spec:
   project: default
