@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: 'https://github.com/Jtango18/jt-argo-test.git'  # replace with your repo
     targetRevision: deploy-demo
-    path: manifests
+    path: demo-app
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: demo-app
