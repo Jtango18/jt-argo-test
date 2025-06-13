@@ -173,7 +173,7 @@ spec:
     spec:
       containers:
         - name: nginx-legacy
-          image: docker.io/nginx:1.19
+          image: docker.io/nginx:1.27.5
           ports:
             - containerPort: 80
 ---
@@ -236,7 +236,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:latest
+          image: nginx:1.27.5
           ports:
             - containerPort: 80
 ---
