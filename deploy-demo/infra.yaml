@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.27.5
+          image: nginx:1.25-alpine
           ports:
             - containerPort: 80
 ---
@@ -107,7 +107,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: docker.io/postgres:17.5
+          image: docker.io/postgres:16
           env:
             - name: POSTGRES_PASSWORD
               value: "demo"
@@ -173,7 +173,7 @@ spec:
     spec:
       containers:
         - name: nginx-legacy
-          image: docker.io/nginx:1.27.5
+          image: docker.io/nginx:1.19
           ports:
             - containerPort: 80
 ---
@@ -236,7 +236,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.27.5
+          image: nginx:latest
           ports:
             - containerPort: 80
 ---
