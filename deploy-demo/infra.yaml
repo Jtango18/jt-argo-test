@@ -259,7 +259,12 @@ spec:
       containers:
         - name: node
           image: node:20-alpine
-          command: ['node', '-e', 'console.log("Hello from Node")']
+          command:
+            - node
+            - -e
+            - |
+              console.log("Hello from Node");
+              setInterval(() => {}, 1000);
 ---
 # Component 13
 apiVersion: apps/v1
