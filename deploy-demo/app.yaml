@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: demo-containers-app
   namespace: argocd
-annotations: 
+  annotations: 
     octopus.com/project: "container-replacement-demo"
     octopus.com/environment: "demo"
 spec:
