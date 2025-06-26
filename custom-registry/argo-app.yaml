@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: custom-registry
   namespace: argocd # Ensure the Argo CD namespace is correct
+  annotations:
+    octopus.com/project: custom-registry-deployment
+    octopus.com/environment: development
 spec:
   project: default # Or the name of your Argo CD project
   source:
