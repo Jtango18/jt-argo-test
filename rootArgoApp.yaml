@@ -11,10 +11,10 @@ spec:
   source:
     repoURL: 'https://github.com/Jtango18/jt-argo-test.git' # Replace with your Git repository URL
     targetRevision: main
-    path: non-octopus-app # The path to the manifests within the repository
+    path: './' # The path to the manifests within the repository
   destination:
     server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
-    namespace: not-octopus-argo # The namespace where you want to deploy the app
+    namespace: root-level-argo-app # The namespace where you want to deploy the app
   syncPolicy:
     automated:
       prune: true    # Delete resources no longer present in Git
