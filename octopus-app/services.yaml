@@ -46,6 +46,7 @@ spec:
       containers:
       - name: busybox-container
         image: docker.io/busybox:stable
+        command: ["/bin/sh", "-c", "while true; do echo Hello from BusyBox; sleep 5; done"]
 ---
 apiVersion: v1
 kind: Service
