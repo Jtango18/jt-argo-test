@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: multi-source
+  namespace: argocd # Ensure the Argo CD namespace is correct
+spec:
+  project: default # Or the name of your Argo CD project
+  sources:
+    - repoURL: 'https://github.com/Jtango18/jt-argo-test.git' # Replace with your Git repository URL
+      targetRevision: multi-source
+      path: octopus-app # The path to the manifests within the repository
+    - repoURL: 'https://github.com/Jtango18/jt-argo-test.git' # Replace with your Git repository URL
+      targetRevision: multi-source
+      path: non-octopus-app # The path to the manifests within the repository
+  destination:
+    server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
+    namespace: octopus-managed-app-ms # The namespace where you want to deploy the app
+  syncPolicy:
+    automated:
+      prune: true    # Delete resources no longer present in Git
+      selfHeal: true # Reconcile resources back to the desired state
+    syncOptions:
+    - CreateNamespace=true # Automatically create the destination namespace if it doesn't exist
